@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view hidden="YES" contentMode="scaleToFill" id="iN0-l3-epB" customClass="LoadingIndicatorView" customModule="Apple_CRM" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="500" height="60"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rTI-PJ-iV8">
+                    <rect key="frame" x="250" y="30" width="0.0" height="0.0"/>
+                    <accessibility key="accessibilityConfiguration" identifier="errorLabel"/>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                    <color key="textColor" name="DarkGrayColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="1ax-So-WP7">
+                    <rect key="frame" x="199.5" y="19.5" width="101" height="21"/>
+                    <subviews>
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="snn-eH-TDk">
+                            <rect key="frame" x="0.0" y="0.0" width="20" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20" id="6ku-bY-5FB"/>
+                                <constraint firstAttribute="width" constant="20" id="p47-lR-gll"/>
+                            </constraints>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="6ku-bY-5FB"/>
+                                </mask>
+                            </variation>
+                        </activityIndicatorView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LOZ-W8-a6t">
+                            <rect key="frame" x="30" y="0.0" width="71" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="71" id="1C1-zd-9V6"/>
+                                <constraint firstAttribute="height" constant="21" id="sHU-ix-UZz"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="snn-eH-TDk" firstAttribute="centerY" secondItem="1ax-So-WP7" secondAttribute="centerY" id="3pX-zV-C9S"/>
+                        <constraint firstAttribute="trailing" secondItem="LOZ-W8-a6t" secondAttribute="trailing" id="8lO-8q-i3b"/>
+                        <constraint firstItem="LOZ-W8-a6t" firstAttribute="centerY" secondItem="snn-eH-TDk" secondAttribute="centerY" id="QBR-mX-SbG"/>
+                        <constraint firstItem="snn-eH-TDk" firstAttribute="leading" secondItem="1ax-So-WP7" secondAttribute="leading" id="Wli-Rg-H5X"/>
+                        <constraint firstItem="LOZ-W8-a6t" firstAttribute="leading" secondItem="snn-eH-TDk" secondAttribute="trailing" constant="10" id="ana-fR-GCb"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="JYd-2p-MOy"/>
+            <constraints>
+                <constraint firstItem="rTI-PJ-iV8" firstAttribute="centerY" secondItem="JYd-2p-MOy" secondAttribute="centerY" id="1Pe-vC-I5P"/>
+                <constraint firstItem="1ax-So-WP7" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="IRj-3S-tf5"/>
+                <constraint firstItem="rTI-PJ-iV8" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="JYd-2p-MOy" secondAttribute="leading" constant="20" id="XvE-Ti-pjZ"/>
+                <constraint firstItem="1ax-So-WP7" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="dI7-ti-zZ3"/>
+                <constraint firstItem="rTI-PJ-iV8" firstAttribute="centerX" secondItem="JYd-2p-MOy" secondAttribute="centerX" id="iPv-fq-MkD"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="activityIndicatorView" destination="snn-eH-TDk" id="ko5-X3-02P"/>
+                <outlet property="activityStackView" destination="1ax-So-WP7" id="QNh-UF-W3O"/>
+                <outlet property="errorLabel" destination="rTI-PJ-iV8" id="swc-Z7-1ep"/>
+                <outlet property="loadingLabel" destination="LOZ-W8-a6t" id="hZz-Pb-04t"/>
+            </connections>
+            <point key="canvasLocation" x="-69" y="-238"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="DarkGrayColor">
+            <color white="0.33300000429153442" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </namedColor>
+    </resources>
+</document>
